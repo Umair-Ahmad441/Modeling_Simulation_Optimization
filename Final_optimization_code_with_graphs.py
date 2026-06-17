@@ -34,7 +34,7 @@ P_PV_values = [
     0.092, 0.057, 0.037, 0.011, 0,
     0, 0, 0, 0
 ]
-P_PV = {i: 0 * P_PV_values[i-1] for i in time_steps}
+P_PV = {i: 25 * P_PV_values[i-1] for i in time_steps}
 print("Energy Prices (€/kWh):", C)
 print("Load (kW):", P_L)
 print("Solar Generation (kW):", P_PV)
@@ -154,7 +154,7 @@ plt.xticks(range(0, 25, 2), [f"{h:02d}:00" for h in range(0, 25, 2)], rotation=4
 plt.yticks(fontsize=16)
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig('Graph_1_P_GL0.png', dpi=dpi_setting)
+plt.savefig('Graph_1_P_GL.png', dpi=dpi_setting)
 plt.close()
 
 # 2. P_GB (Grid to Battery)
@@ -168,7 +168,7 @@ plt.xticks(range(0, 25, 2), [f"{h:02d}:00" for h in range(0, 25, 2)], rotation=4
 plt.yticks(fontsize=16)
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig('Graph_2_P_GB0.png', dpi=dpi_setting)
+plt.savefig('Graph_2_P_GB.png', dpi=dpi_setting)
 plt.close()
 
 # 3. P_BL (Battery to Load)
@@ -182,7 +182,7 @@ plt.xticks(range(0, 25, 2), [f"{h:02d}:00" for h in range(0, 25, 2)], rotation=4
 plt.yticks(fontsize=16)
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
-plt.savefig('Graph_3_P_BL0.png', dpi=dpi_setting)
+plt.savefig('Graph_3_P_BL.png', dpi=dpi_setting)
 plt.close()
 
 # 4. P_SL (Solar to Load)

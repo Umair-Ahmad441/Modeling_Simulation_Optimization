@@ -34,7 +34,7 @@ P_PV_values = [
     0.092, 0.057, 0.037, 0.011, 0,
     0, 0, 0, 0
 ]
-P_PV = {i: 25 * P_PV_values[i-1] for i in time_steps}
+P_PV = {i: 20 * P_PV_values[i-1] for i in time_steps}
 print("Energy Prices (€/kWh):", C)
 print("Load (kW):", P_L)
 print("Solar Generation (kW):", P_PV)

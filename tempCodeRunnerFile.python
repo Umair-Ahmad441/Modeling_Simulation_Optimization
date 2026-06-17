@@ -1,0 +1,39 @@
+import matplotlib.pyplot as plt
+
+# 1. Extracted Data for Growatt AXE Battery Sets
+capacity_kwh = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+price_euros = [865, 1649, 2469, 3099, 3895, 4649, 5449, 6190, 6890, 7549]
+
+# 2. Setup the Figure
+plt.figure(figsize=(10, 6))
+
+# Plot the line with markers
+plt.plot(capacity_kwh, price_euros, marker='o', color='#3498db', linewidth=2.5, markersize=8)
+
+# 3. Formatting labels and titles
+plt.title('Growatt AXE Battery Storage Prices by Capacity', fontsize=16, fontweight='bold')
+plt.xlabel('Energy Capacity (kWh)', fontsize=18)
+plt.ylabel('Price (€)', fontsize=18)
+
+# Set X-axis to show every 5kWh increment exactly
+plt.xticks(capacity_kwh, fontsize=16)
+plt.yticks(fontsize=16)
+plt.grid(True, linestyle='--', alpha=0.7)
+
+# 4. Annotate each point with its price
+for i, price in enumerate(price_euros):
+    plt.annotate(f"€{price}", 
+                 (capacity_kwh[i], price_euros[i]), 
+                 textcoords="offset points", 
+                 xytext=(0,10), 
+                 ha='center', 
+                 fontsize=16,
+                 fontweight='bold')
+
+plt.tight_layout()
+
+# 5. Save the graph
+filename = 'Growatt_AXE_Price_Scaling.png'
+plt.savefig(filename, dpi=300, bbox_inches='tight')
+
+print(f"Graph successfully saved as: {filename}")

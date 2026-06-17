@@ -1,0 +1,1 @@
+plt.plot(hours, val_P_GB, marker='o', color="#1411b6", linewidth=2)
